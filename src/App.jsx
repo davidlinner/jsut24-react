@@ -1,39 +1,17 @@
+import { useState, useEffect } from 'react';
 import './App.css'
-import iphone from './assets/iphone.jpg';
-import pixel from './assets/pixel.jpg';
 
-function Cards(props){
-  return <div className='cards'>
-    {props.children}
-  </div>
-}
-
-function Card(props){
-  return <div className='card'>
-    <div className='card-image'>
-      <img src={props.image}/>
-    </div>
-    <div className='card-text'>
-      <h3>{props.title}</h3>
-      <p>{props.text}</p>
-    </div>
-  </div>
-}
+import View1 from './View1';
+import View2 from './View2';
 
 function App() {
- return <Cards> 
-  <Card 
-  title="First card" 
-  text="This is the text of my first card."
-  image={iphone}
-  />
+  const [currenView, setCurrentView] = useState(1);
 
-  <Card 
-  title="Second card" 
-  text="More text."
-  image={pixel}
-  />
- </Cards>
+  if(currenView == 1){
+    return <View1 onNextClick={()=> setCurrentView(2)}/>;
+  } else if (currenView == 2){
+    return <View2 onBackClick={()=> setCurrentView(1)}/>;
+  }
 }
 
 export default App

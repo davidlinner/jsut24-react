@@ -1,0 +1,29 @@
+  /*
+   Units: 
+    vw = view width, realtive width of the current view 0-100
+    vh = view height, realtive height of the current view 0-100
+  
+  */
+  .chat {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: 0 25vw;
+  } 
+  
+  .bubble {
+    border-radius: .25rem;
+    padding: 1rem;
+    margin: .5rem;
+  }
+  
+  .my-bubble {
+    align-self: flex-end;
+    background-color: cornflowerblue;
+  }
+  
+  .other-bubble {
+    align-self: flex-start;
+    background-color: #ddd;
+  }
+  
